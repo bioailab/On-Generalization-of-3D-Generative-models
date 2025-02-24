@@ -16,14 +16,24 @@ NOTE: This repository borrows heavily from the [*3DShape2VecSet*](https://github
 ## :bullettrain_front: Training
 Download the preprocessed data from [here](https://drive.google.com/drive/folders/1UFPi_UklH5clWKxxeL1IsxfjdUfc7i4x). In case that this link is inaccessable, send [me](mailto:biao.zhang@kaust.edu.sa) an email for the data. Uncompress `occupancies.zip` and `surfaces.zip` to somewhere in your hard disk. They are required in the training phase.
 
+### Environement setup
+The docker ocntainer used to run the experiments is avalable [here]:(https://hub.docker.com/r/arushika07/uit-norway) 
+
+#### Set the data path and the output path 
+```
+EXPORT DATA_PATH=/datapath/
+EXPORT OUT_PATH=/
+```
+
 ### First stage (autoencoder):
 ```
 torchrun \
     --nproc_per_node=4 main_ae.py \
     --accum_iter=2 \
     --model ae_d512_m512  \
-    --output_dir output/ae/ae_d512_m512 \
-    --log_dir output/ae/ae_d512_m512 \
+    --data_path $DATA_PATH/ \
+    --output_dir $OUT_PATH/output/ae/ae_d512_m512 \
+    --log_dir $OUT_PATH/output/ae/ae_d512_m512 \
     --num_workers 60 \
     --point_cloud_size 2048 \
     --batch_size 64 \
@@ -42,13 +52,13 @@ torchrun \
     --model kl_d512_m512_l8_d24_edm \
     --ae kl_d512_m512_l8 \
     --ae-pth output/ae/kl_d512_m512_l8/checkpoint-199.pth \
-    --output_dir output/dm/kl_d512_m512_l8_d24_edm \
-    --log_dir output/dm/kl_d512_m512_l8_d24_edm \
+    --output_dir $OUT_PATH/output/dm/kl_d512_m512_l8_d24_edm \
+    --log_dir $OUT_PATH/output/dm/kl_d512_m512_l8_d24_edm \
     --num_workers 64 \
     --point_cloud_size 2048 \
     --batch_size 64 \
     --epochs 1000 \
-    --data_path ~/data/
+    --data_path $DATA_PATH/
 ```
 
 ## :balloon: Sampling
