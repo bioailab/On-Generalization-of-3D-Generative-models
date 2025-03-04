@@ -2,7 +2,7 @@
 
  <!-- [Paper (arXiv)](https://arxiv.org/abs/2301.11445) -->
 
-**This repository is the official pytorch implementation of *On-Generalization-of-3D-Generative-models* which is an analysis of generalization capability of the model 
+**This repository is the official pytorch implementation of *On-Generalization-of-3D-Generative-models* [PaperLink](docs/AAAI25Workshop3DGenv1.pdf) which is an analysis of generalization capability of the model 
  *3DShape2VecSet (https://arxiv.org/abs/2301.11445)*.** 
 
 [Arushika Bhansal](https://1zb.github.io/)<sup>1</sup>,
