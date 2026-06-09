@@ -7,7 +7,7 @@
 
 [Arushika Bhansal](https://1zb.github.io/)<sup>1</sup>,
 [Abhinanda Ranjit Punnakkal](https://tangjiapeng.github.io/)<sup>2</sup>
-[Dilip Prasad](https://www.niessnerlab.org/)<sup>2</sup>
+[Dilip Prasad](https://sites.google.com/site/dilipprasad/home)<sup>2</sup>
 <sup>1</sup>IIT(ISM) Dhanbad, <sup>2</sup>Uit The Arctic University of Norway
 
 
